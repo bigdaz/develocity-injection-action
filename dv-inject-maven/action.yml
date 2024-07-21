@@ -9,10 +9,8 @@ runs:
   steps:
   - name: Inject Develocity for Maven
     shell: bash
+    working-directory: ${{ inputs.project-root-directory }}
     run: |
-      echo "GITHUB_ACTION_PATH = $GITHUB_ACTION_PATH"
-      echo "github.action_path = ${{ github.action_path }}"
-      echo "project-root-directory = ${{ inputs.project-root-directory }}"
-      # mkdir -p .mvn
-      # cp -n $GITHUB_ACTION_PATH/resources/.mvn/extensions.xml .mvn/extensions.xml
-      # cp -n $GITHUB_ACTION_PATH/resources/.mvn/develocity.xml .mvn/develocity.xml
+      mkdir -p .mvn
+      cp -n ${{ github.action_path }}/resources/.mvn/extensions.xml .mvn/extensions.xml
+      cp -n ${{ github.action_path }}/resources/.mvn/develocity.xml .mvn/develocity.xml
