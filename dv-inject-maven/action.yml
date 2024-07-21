@@ -1,0 +1,17 @@
+name: Maven Develocity injection
+
+inputs:
+  project-root-directory:
+    required: false
+    default: ${{ github.workspace }}
+runs:
+  using: "composite"
+  steps:
+  - name: Inject Develocity for Maven
+    run: |
+      echo "GITHUB_ACTION_PATH = $GITHUB_ACTION_PATH"
+      echo "github.action_path = ${{ github.action_path }}"
+      echo "project-root-directory = ${{ inputs.project-root-directory }}"
+      # mkdir -p .mvn
+      # cp -n $GITHUB_ACTION_PATH/resources/.mvn/extensions.xml .mvn/extensions.xml
+      # cp -n $GITHUB_ACTION_PATH/resources/.mvn/develocity.xml .mvn/develocity.xml
