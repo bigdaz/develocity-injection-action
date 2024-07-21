@@ -12,5 +12,5 @@ runs:
     working-directory: ${{ inputs.project-root-directory }}
     run: |
       mkdir -p .mvn
-      cp -n ${{ github.action_path }}/resources/.mvn/extensions.xml .mvn/extensions.xml
-      cp -n ${{ github.action_path }}/resources/.mvn/develocity.xml .mvn/develocity.xml
+      cp -n ${{ github.action_path }}/resources/extensions.xml .mvn/extensions.xml
+      cp -n ${{ github.action_path }}/resources/develocity.xml .mvn/develocity.xml
