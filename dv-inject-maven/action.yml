@@ -8,6 +8,7 @@ runs:
   using: "composite"
   steps:
   - name: Inject Develocity for Maven
+    shell: bash
     run: |
       echo "GITHUB_ACTION_PATH = $GITHUB_ACTION_PATH"
       echo "github.action_path = ${{ github.action_path }}"
