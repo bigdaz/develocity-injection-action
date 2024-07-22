@@ -1,9 +1,8 @@
 name: Gradle Develocity injection
 
 inputs:
-  project-root-directory:
-    required: false
-    default: ${{ github.workspace }}
+  develocity-access-key:
+    required: true
 runs:
   using: "composite"
   steps:
@@ -17,3 +16,4 @@ runs:
       echo "DEVELOCITY_INJECTION_INIT_SCRIPT_NAME=develocity-injection.init.gradle" >> "$GITHUB_ENV"
       echo "DEVELOCITY_URL=https://ge.solutions-team.gradle.com" >> "$GITHUB_ENV"
       echo "DEVELOCITY_PLUGIN_VERSION=3.17" >> "$GITHUB_ENV"
+      echo "DEVELOCITY_ACCESS_KEY=${{ inputs.develocity-access-key }}" >> "$GITHUB_ENV"
