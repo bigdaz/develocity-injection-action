@@ -16,6 +16,7 @@ runs:
       mkdir -p .mvn
       cp -n ${{ github.action_path }}/resources/extensions.xml .mvn/extensions.xml
       cp -n ${{ github.action_path }}/resources/develocity.xml .mvn/develocity.xml
+      cp -n ${{ github.action_path }}/resources/develocity-custom-user-data.groovy .mvn/develocity-custom-user-data.groovy
 
       echo "DEVELOCITY_URL=https://ge.solutions-team.gradle.com" >> "$GITHUB_ENV"
       echo "DEVELOCITY_ACCESS_KEY=${{ inputs.develocity-access-key }}" >> "$GITHUB_ENV"
