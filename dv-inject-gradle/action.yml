@@ -15,5 +15,7 @@ runs:
       echo "DEVELOCITY_INJECTION_ENABLED=true" >> "$GITHUB_ENV"
       echo "DEVELOCITY_INJECTION_INIT_SCRIPT_NAME=develocity-injection.init.gradle" >> "$GITHUB_ENV"
       echo "DEVELOCITY_URL=https://ge.solutions-team.gradle.com" >> "$GITHUB_ENV"
-      echo "DEVELOCITY_PLUGIN_VERSION=3.17" >> "$GITHUB_ENV"
+      echo "DEVELOCITY_PLUGIN_VERSION=3.17.5" >> "$GITHUB_ENV"
+      echo "DEVELOCITY_CCUD_PLUGIN_VERSION=2.0.2" >> "$GITHUB_ENV
+
       echo "DEVELOCITY_ACCESS_KEY=${{ inputs.develocity-access-key }}" >> "$GITHUB_ENV"
