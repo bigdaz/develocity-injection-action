@@ -411,4 +411,14 @@ static buildScanPublishedAction(def buildScanExtension, BuildScanCollector colle
     }
 }
 
-class BuildScanCollector {}
+// Write build scan links to GitHub Actions job summary
+class BuildScanCollector {
+    void captureBuildScanLink(String buildScanUri) {
+        println("Captured build scan link: ${buildScanUri}")
+
+        def jobSummaryFile = System.getenv("GITHUB_STEP_SUMMARY")
+        if (jobSummaryFile) {
+            new File(jobSummaryFile) << "Develocity Build Scan: ${buildScanUri}"
+        }
+    }
+}
